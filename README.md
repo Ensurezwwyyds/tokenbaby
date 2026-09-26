@@ -1,4 +1,5 @@
 # TokenBaby
+这个本人在一个无聊的下午完成的token工具，可以显示剩余的额度，同时加入的奶娃元素，希望大家喜欢，后续也会继续优化
 
 一只常驻 Windows 桌面的黄色宠物，显示当前 ChatGPT 账号的 Codex 套餐剩余额度。TokenBaby 是社区项目，与 OpenAI 官方无隶属关系。
 
@@ -27,30 +28,6 @@
 3. 运行 `TokenBaby.exe`。单击宠物可查看额度，右键宠物或托盘图标可打开菜单。
 
 如果无法找到 `codex.exe`，可设置环境变量 `TOKENBABY_CODEX_PATH` 为其完整路径。TokenBaby 使用本机现有的 Codex 登录状态；API Key 登录不会返回所需的 ChatGPT 套餐额度。
-
-## 从源码构建
-
-在 Windows PowerShell 中运行：
-
-```powershell
-.\tests\run.ps1
-.\build.ps1 -Package
-```
-
-可执行文件位于 `dist\release\TokenBaby.exe`，便携包位于 `dist\TokenBaby-portable.zip`。构建脚本使用 Windows 自带的 .NET Framework C# 编译器，不需要 NuGet 还原。`./tests/run.ps1 -Live` 可选用本机已登录的 Codex 执行只读联调；GitHub CI 仅运行离线测试。调试窗口可用 `./build.ps1 -DebugUi` 编译。
-
-## 代码结构
-
-| 路径 | 内容 |
-| --- | --- |
-| `src/App` | 启动、托盘、窗口位置存储 |
-| `src/Core` | 额度模型与 JSON 数据解析 |
-| `src/Infrastructure` | Codex App Server 子进程通信 |
-| `src/UI` | 宠物窗口、点击动画、额度面板 |
-| `assets` | 当前六张运行时图片及生成记录 |
-| `tests` | 离线解析测试和可选的实时读取探针 |
-
-TokenBaby 只在 `%APPDATA%\TokenBaby\position.txt` 保存宠物窗口位置。它通过 [Codex App Server 协议](https://learn.chatgpt.com/docs/app-server) 的 `account/rateLimits/read` 获取额度，不直接处理账号凭据。
 
 ## 许可证与素材
 
