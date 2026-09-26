@@ -1,0 +1,22 @@
+# Build output and local previews
+dist/
+TokenBaby-preview.zip
+bin/
+obj/
+*.pdb
+*.tmp
+*.log
+
+# IDE and machine-specific files
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+
+# Local credentials and reference photos
+.env
+.env.*
+!.env.example
+references/
+*.secrets.json
