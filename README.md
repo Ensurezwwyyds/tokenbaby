@@ -2,6 +2,16 @@
 
 一只常驻 Windows 桌面的黄色宠物，显示当前 ChatGPT 账号的 Codex 套餐剩余额度。TokenBaby 是社区项目，与 OpenAI 官方无隶属关系。
 
+## 内容预览
+
+| 低额度状态 | 点击后的捧腹大笑 |
+| :---: | :---: |
+| <img src="docs/images/pet-low.png" alt="低额度时低头的宠物" width="180"> | <img src="docs/images/pet-laugh.png" alt="捧腹大笑的宠物" width="180"> |
+
+额度面板：
+
+<img src="docs/images/quota-panel.png" alt="Windows 桌面上的宠物与 Codex 额度面板" width="640">
+
 ## 功能
 
 - 透明、始终置顶、可拖动；托盘菜单可隐藏、恢复和退出。
