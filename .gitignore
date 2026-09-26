@@ -1,5 +1,6 @@
 # Build output and local previews
 dist/
+.build/
 TokenBaby-preview.zip
 bin/
 obj/
