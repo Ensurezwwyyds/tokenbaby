@@ -1,7 +1,7 @@
 # TokenBaby
-这个本人在一个无聊的下午完成的token工具，可以显示剩余的额度，同时加入的奶娃元素，希望大家喜欢，后续也会继续优化，目前项目只支持windows
+这个本人在一个无聊的下午完成的token工具，可以显示剩余的额度，同时加入的奶娃元素，希望大家喜欢，后续也会继续优化，目前支持 Windows，并提供原生 macOS 适配。
 
-一只常驻 Windows 桌面的黄色宠物，显示当前 ChatGPT 账号的 Codex 套餐剩余额度。TokenBaby 是社区项目，与 OpenAI 官方无隶属关系。
+一只常驻桌面的黄色宠物，显示当前 ChatGPT 账号的 Codex 套餐剩余额度。TokenBaby 是社区项目，与 OpenAI 官方无隶属关系。
 
 ## 内容预览
 
@@ -15,7 +15,7 @@
 
 ## 功能
 
-- 透明、始终置顶、可拖动；托盘菜单可隐藏、恢复和退出。
+- 透明、始终置顶、可拖动；Windows 托盘或 macOS 菜单栏可隐藏、恢复和退出。
 - 单击宠物展开额度面板，查看 5 小时与 7 天额度、重置时间及最近刷新时间。
 - 由**5 小时剩余比例**决定宠物状态：≤20% 低落、>20% 且 ≤70% 平静、>70% 开心。
 - 点击动作与状态对应：低额度擦泪、中额度回头看你、高额度捧腹大笑。待机时有轻微随机动作。
@@ -23,11 +23,21 @@
 
 ## 安装与运行
 
+### Windows
+
 1. 使用 Windows 和 .NET Framework 4.8；安装 Codex 桌面版或 CLI，并在 Codex 中登录 **ChatGPT 账号**。
 2. 从构建产物中解压 `TokenBaby-portable.zip`，保持 `TokenBaby.exe` 与 `assets` 文件夹在同一目录。
 3. 运行 `TokenBaby.exe`。单击宠物可查看额度，右键宠物或托盘图标可打开菜单。
 
 如果无法找到 `codex.exe`，可设置环境变量 `TOKENBABY_CODEX_PATH` 为其完整路径。TokenBaby 使用本机现有的 Codex 登录状态；API Key 登录不会返回所需的 ChatGPT 套餐额度。
+
+### macOS
+
+1. 使用 macOS 13 或更高版本；安装 Xcode Command Line Tools，以及已登录 **ChatGPT 账号**的 Codex 桌面版或 CLI。
+2. 在仓库目录运行 `chmod +x build-macos.sh && ./build-macos.sh`。
+3. 运行 `open dist/TokenBaby.app`。单击宠物可查看额度，菜单栏图标可刷新、隐藏宠物或退出。
+
+macOS 版直接复用仓库内的六张奶娃素材，并保持相同的三档状态和点击动作。如果无法找到 `codex`，可在运行前设置 `TOKENBABY_CODEX_PATH` 为其完整路径，例如 `/opt/homebrew/bin/codex`。
 
 ## 许可证与素材
 
